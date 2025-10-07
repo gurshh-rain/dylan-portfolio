@@ -1,5 +1,4 @@
 "use client";
-import Logo from "./Logo";
 import { useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { gsap } from "gsap";
@@ -126,11 +125,7 @@ const PageTransition = ({ children }) => {
     return (
         <>
             <div ref={overlayRef} className="transition-overlay"></div>
-            <div ref={logoOverlayRef} className="logo-overlay">
-                <div className="logo-container">
-                    <Logo ref={logoRef} />
-                </div>    
-            </div>    
+
             {children}  
         </>
     );
