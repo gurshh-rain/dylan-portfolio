@@ -24,6 +24,37 @@ body {
   font-family: "nano", sans-serif;
   background-color: #1d1d1d;
 }
+.revealer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+  color: #fff;
+  font-family: "Sansation", sans-serif;
+}
+
+.loading-content {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+  text-align: center;
+  overflow: hidden;
+}
+
+.loading-content p {
+  margin: 0;
+}
+
 
 img {
   width: 100%;
@@ -47,6 +78,26 @@ section {
   height: 100%;
 }
 
+.home {
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+.home .header {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+} 
+
+
+.home .header h1 {
+  font-size:  20.5vw;
+  text-align: center;
+}
 
 a {
   text-decoration: none;
@@ -66,15 +117,17 @@ h1{
   left: 0.5em;
 }
 
-.about-text {
-  color: #ebebeb;
-  position: absolute;
-  width: 35vw;
-  top: 20em;
-  left: 5em;
-  font-weight: 550;
-  font-family: sans-serif;
-  font-size: 1em;
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(70px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.letter.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .contact-info{
   position: absolute;
@@ -94,10 +147,14 @@ nav {
   z-index: 1;
 }
 .project-title {
-  margin-top: 10vh;
-  margin-left: 2.6vw;
-  z-index: 10
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
 }
+
 
 .tooltip {
     font-family: "Sansation", sans-serif;
@@ -121,19 +178,42 @@ nav {
 
 .container {
   position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 100svh;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 .page-header {
   width: 100vw;
-  height: 100svh;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Stack title and paragraph vertically */
   padding: 2rem;
+  box-sizing: border-box;
 }
+
+.page-header h1 {
+  position: relative;
+  color: rgb(228, 228, 228);
+  font-size: 6em;
+  margin: 1em 0 1rem 0;
+}
+
+.about-text {
+  position: relative;
+  top: 10vh;
+  left: 3vw;
+  color: #ebebeb;
+  margin: 1em 0 1rem 0;
+  width: 35vw;
+  max-width: 600px;
+  font-weight: 550;
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 1.3em;
+}
+
 
 .transition-overlay {
   position: fixed;
@@ -178,8 +258,23 @@ nav {
   padding: 20px;
 }
 
-@media (max-width: 1000px) {
-  h1 {
-    font-size: 3rem;
-  }
+.contact-img {
+  position: relative;
+  border-radius: 10px;
+  filter: grayscale();
+  left: 50vw;
+  display: block;
+  width: 45%;
+  height: auto;
 }
+
+.about-img {
+  position: relative;
+  top: 22vh;
+  border-radius: 10px;
+  filter: grayscale();
+  display: block;
+  width: 100%;
+  height: auto;
+}
+

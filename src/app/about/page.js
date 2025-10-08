@@ -27,7 +27,7 @@ export default function Page() {
     );
     camera.position.set(-1.5, 0, 5);
     camera.lookAt(0, 0, 0);
-    camera.position.set(-3, 0, 5);
+    camera.position.set(-3, -0.2, 5);
 
     // Renderer
     renderer = new THREE.WebGLRenderer({
@@ -57,7 +57,7 @@ export default function Page() {
     const loader = new GLTFLoader();
     loader.load("./dylan1.glb", (gltf) => {
       model = gltf.scene;
-      model.scale.set(0.35, 0.35, 0.35);
+      model.scale.set(0.3, 0.3, 0.3);
 
       model.traverse((child) => {
         if (child.isMesh) {
@@ -127,6 +127,7 @@ export default function Page() {
             In the future, I hope to further develop my skills in design and pursue opportunities
             that allow me to contribute to meaningful, innovative projects in architecture.
           </p>
+          <img src="/about-img.jpg" className="about-img"></img>
         </div>
       </div>
     </>
