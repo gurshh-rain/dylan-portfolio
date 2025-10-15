@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     
-    <div ref={containerRef} style={{ width: "100vw", height: "100vh", overflow: "hidden" }}>
+    <div ref={containerRef} style={{ width: "100vw", height: "100vh", overflow: "hidden" }} className="fullPage">
       <div className="revealer">
         <div className="loading-content">
         <p

@@ -39,7 +39,9 @@ body {
   color: #fff;
   font-family: "Sansation", sans-serif;
 }
-
+.fullPage {
+  overflow: hidden;
+}
 .loading-content {
   display: flex;
   width: 100vw;
