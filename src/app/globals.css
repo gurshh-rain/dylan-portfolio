@@ -139,15 +139,38 @@ h1{
   font-weight: 500;
   color: #ebebeb;
 }
-nav {
+.nav {
   position: fixed;
-  width: 100vw; 
-  padding: 2rem;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1;
+  width: 500px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
+
+.nav-logo a,
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  text-decoration: none;
+  gap: 20px;
+}
+
+
 .project-title {
   position: absolute;
   top: 50%;
@@ -170,12 +193,6 @@ nav {
     z-index: 9999;
     transform: translate(-15%, -150%);
 
-}
-
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
 }
 
 .container {
